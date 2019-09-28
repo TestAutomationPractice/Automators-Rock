@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.autothon</groupId>
-  <artifactId>AutomatorsRock</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>com.autothon</groupId>
+	<artifactId>AutomatorsRock</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>AutothonAutomatorsRock</name>
-  <url>http://maven.apache.org</url>
+	<name>AutothonAutomatorsRock</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -83,43 +83,43 @@
 			<version>2.9.6</version>
 		</dependency>
 		<dependency>
-		    <groupId>com.googlecode.json-simple</groupId>
-		    <artifactId>json-simple</artifactId>
-		    <version>1.1</version>
-		</dependency> 
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
 		<dependency>
-		    <groupId>net.sf.json-lib</groupId>
-		    <artifactId>json-lib</artifactId>
-		    <version>2.4</version>
-		    <classifier>jdk15</classifier>
-		</dependency> 
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
 		<dependency>
-                     <groupId>com.googlecode.json-simple</groupId>
-                     <artifactId>json-simple</artifactId>
-                     <version>1.1</version>
-              </dependency>
-              <dependency>
-                     <groupId>net.sf.dozer</groupId>
-                     <artifactId>dozer</artifactId>
-                     <version>5.5.1</version>
-              </dependency>
-              <dependency>
-                     <groupId>org.springframework.boot</groupId>
-                     <artifactId>spring-boot-starter-web</artifactId>
-                     <version>1.4.1.RELEASE</version>
-                     <exclusions>
-                           <exclusion>
-                                  <artifactId>validation-api</artifactId>
-                                  <groupId>javax.validation</groupId>
-                           </exclusion>
-                     </exclusions>
-              </dependency>
-              <dependency>
-                     <groupId>org.openpnp</groupId>
-                     <artifactId>opencv</artifactId>
-                     <version>3.2.0-0</version>
-              </dependency>
-		
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>1.4.1.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>validation-api</artifactId>
+					<groupId>javax.validation</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.openpnp</groupId>
+			<artifactId>opencv</artifactId>
+			<version>3.2.0-0</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -130,7 +130,7 @@
 				<configuration>
 					<jvm>${env.JAVA_HOME}/bin/java</jvm>
 					<suiteXmlFiles>
-						 <suiteXmlFile>local_testng.xml</suiteXmlFile>  
+						<suiteXmlFile>local_testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<reportsDirectory>./test-output</reportsDirectory>
 					<systemPropertyVariables>
@@ -143,8 +143,8 @@
 						<dbPath>jdbc:postgresql://00.00.002/xxxxxx_uat</dbPath>
 						<dbUserName>postgres</dbUserName>
 						<dbPassword>pass0000</dbPassword>
-						<qtestProjectName>Autothon</qtestProjectName> 
-						<seleniumGridEndPoint>http://9999.999:8080/wd/hub</seleniumGridEndPoint>	
+						<qtestProjectName>Autothon</qtestProjectName>
+						<seleniumGridEndPoint>http://9999.999:8080/wd/hub</seleniumGridEndPoint>
 						<enableQtestIntegration>0</enableQtestIntegration>
 						<needsGridInfrastructure>0</needsGridInfrastructure>
 						<maxRetryCount>3</maxRetryCount>
@@ -152,6 +152,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	
+
 	</build>
 </project>
