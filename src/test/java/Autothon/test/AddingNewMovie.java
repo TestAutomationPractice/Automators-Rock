@@ -2,7 +2,7 @@ package Autothon.test;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import AutomatorsRock.Test.Base;
@@ -29,7 +29,7 @@ public class AddingNewMovie extends Base {
 
 	@Test(description = "Adding New Moview Through UI", enabled = true)
 	@CustomTestAnnotations(testCaseNumber = "TC-001")
-	public void createshow() throws Throwable, Exception {
+	public void loginAndAddMovie() throws Throwable, Exception {
 		CommonTestDataDto testDataDto = commonTestData.get();
 		RemoteWebDriver driver = testDataDto.getDriver();
 		Log4JLogger logger = testDataDto.getLogger();
@@ -59,6 +59,53 @@ public class AddingNewMovie extends Base {
 		Thread.sleep(5000);
 		addMoviePage.clickSaveMovie();
    	}
+	
+	@Test(description = "VeriFy Login", enabled = true, dataProvider="user details")
+	@CustomTestAnnotations(testCaseNumber = "TC-003")
+	public void VerifyLogin(String user, String pass, String expectation) throws Throwable, Exception {
+		CommonTestDataDto testDataDto = commonTestData.get();
+		RemoteWebDriver driver = testDataDto.getDriver();
+		Log4JLogger logger = testDataDto.getLogger();
+		TestDataHelper testDataHelper = testDataDto.getTestDataHelper();
+		//Login and Create a new Conference Call on NRS
+		
+		navigateToURL(testDataDto, testDataHelper.getValue("URL"));
+		MoviePage moviesPage = PageFactory.initElements(driver, MoviePage.class);
+		moviesPage.setDependencies(logger, testDataHelper);
+		moviesPage.clickExpand();
+		moviesPage.clickLogin();
+		moviesPage.enterUsername(user);
+		moviesPage.enterPassword(pass);
+		moviesPage.clickLoginButton();
+		Thread.sleep(5000);
+		
+		if(expectation.equals("Admin")) {
+			moviesPage.isAddMoviePresent(true);
+			moviesPage.isLogoutPresent(true);
+			
+		}
+		if(expectation.equals("Regular")) {
+			moviesPage.isAddMoviePresent(false);
+			moviesPage.isLogoutPresent(true);
+			
+		}
+		if(expectation.equals("wrong user")) {
+			moviesPage.isAddMoviePresent(false);
+			moviesPage.isLogoutPresent(false);
+			
+		}
+		
+   	}
 
+	@DataProvider(name="user details")
+    public Object[][] getDataFromDataprovider(){
+    return new Object[][] 
+    	{
+            { "admin", "password" , "Admin" },
+            { "user", "password" , "Regular" },
+            { "test", "test" , "wrong user"}
+        };
+
+    }
 	
 }
