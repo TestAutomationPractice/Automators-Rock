@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Conferencing Regression Suite" parallel="none"
+	thread-count="1" configfailurepolicy="continue">
+	<parameter name="platform" value="Windows 7" />
+	<parameter name="browser" value="Chrome" />
+	<parameter name="version" value="56.0" />
+	<parameter name="screenResolution" value="1280x768" />
+	<listeners>
+		<!-- <listener class-name="Miscellaneous.Listeners.MultiBrowserSuiteListener" 
+			/> -->
+		<listener class-name="Miscellaneous.ConfigureSuiteListener" />
+		<!-- <listener class-name="Miscellaneous.Listeners.TestCaseListener" /> 
+			<listener class-name="Miscellaneous.Listeners.AnnotationTransformer" /> -->
+	</listeners>
+	
+	<test name="Conf Call Slides Live Stream" preserve-order="true">
+		<classes>
+			<class name="ConfCallSlides.test.ConfCallSlidesLiveStream" />
+		</classes>
+	</test>
+	
+	<test name="Conf call Reg No Live Stream" preserve-order="true">
+		<classes>
+			<class name="ConfCallRegNo.test.ConfCallRegNoLiveStream" />
+		</classes>
+	</test>
+	
+	<test name="Conf call live to ended" preserve-order="true">
+		<classes>
+			<class name="Conferencing.test.ConferenceNavigatesFromCallLiveToCallEnded" />
+		</classes>
+	</test>
+	
+	<test name="Share using Dp" preserve-order="true">
+		<classes>
+			<class name="ConferenceCall.test.ShareLiveDashboard_usingDataProvider" />
+		</classes>
+	</test>
+	
+	<test name="Share show and LD" preserve-order="true">
+		<classes>
+			<class name="Conferencing.test.ShareConferenceShowAndPdashbaoard" />
+		</classes>
+	</test>
+	
+	<test name="Verify Revoke online confirmation page" preserve-order="true">
+		<classes>
+			<class name="Conferencing.test.VerifyRevokedAccessUserOnConfirmationPage" />
+		</classes>
+	</test>
+	
+	<test name="Transfer Entry Code" preserve-order="true">
+		<classes>
+			<class name="ConferenceCall.test.TransferEntryCode" />
+		</classes>
+	</test>
+	
+	<test name="Share Show no BG" preserve-order="true">
+		<classes>
+			<class name="ConferenceCall.test.ShareConferenceShowNoBG" />
+		</classes>
+	</test>
+	
+	<test name="Share LD Ended call" preserve-order="true">
+		<classes>
+			<class name="Conferencing.test.LiveDashbaordShareWhenCallHasEnded" />
+		</classes>
+	</test>
+	
+	<test name="Share LD Expired Call" preserve-order="true">
+		<classes>
+			<class name="Conferencing.test.LiveDashboardShareWhenCallHasExpired" />
+		</classes>
+	</test>
+	
+	<!-- <test name="Smoke Suite Chrome" preserve-order="true">
+		<classes>
+			<class name="ConferenceCall.test.ShareConferenceShowTwoBG" />
+		</classes>
+	</test> -->
+	
+	<test name="Regression Test cases" preserve-order="true">
+		<classes>
+			<class name="Conferencing.test.UserRegBothDisclaimerPrivacyDeclaration" />
+			<class name="Conferencing.test.UserRegOnlyDisclaimer" />
+			<class name="Conferencing.test.UserRegOnlyPrivacyDeclaration" />
+			<class name="Conferencing.test.UserRegNoDisclaimerAndPrivacyDeclaration" />
+			<!-- <class name="Conferencing.test.CallStatusWhenCallHasEnded" /> -->
+		</classes>
+	</test>
+</suite>

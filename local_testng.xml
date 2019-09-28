@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite for Local" parallel="methods" thread-count="1"
+	configfailurepolicy="continue">
+	<listeners>
+		<!-- <listener class-name="Miscellaneous.MultiBrowserSuiteListener" /> -->
+		<listener class-name="Miscellaneous.ConfigureSuiteListener" />
+		<!--<listener class-name="Miscellaneous.Listeners.TestCaseListener" /> 
+			<listener class-name="Miscellaneous.Listeners.AnnotationTransformer" /> -->
+	</listeners>
+	<parameter name="platform" value="Local PC" />
+	<parameter name="browser" value="Chrome" />
+	<parameter name="version" value="61.0" />
+	<parameter name="screenResolution" value="1280x960" />
+
+	<test name="Automated Phone Directory">
+
+		<classes>
+			<class name="Autothon.test.AddingNewMovie" />
+		</classes>
+	</test>
+
+	<test name="Automated Phone Directory">
+
+		<classes>
+			<class name="Autothon.test.VerifyNewMovieAdded" />
+		</classes>
+	</test>
+	
+	
+	<!-- <test name="API Testing">
+
+		<classes>
+			<class name="Autothon.test.APITesting" />
+		</classes>
+	</test> -->
+	
+</suite> 
