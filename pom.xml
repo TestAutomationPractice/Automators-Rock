@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.autothon</groupId>
+  <artifactId>AutomatorsRock</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>ConferencingAutomation</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.16</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.16</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>23.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>3.1.3</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.qasymphony.qtest</groupId>
+			<artifactId>qtest-sdk-java</artifactId>
+			<version>1.4.9</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1</version>
+		</dependency> 
+		<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <version>2.4</version>
+		    <classifier>jdk15</classifier>
+		</dependency> 
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<jvm>${env.JAVA_HOME}/bin/java</jvm>
+					<suiteXmlFiles>
+						<!-- <suiteXmlFile>SmokeSuite.xml</suiteXmlFile> -->
+						<!-- <suiteXmlFile>ConferencingRegressionSuite.xml</suiteXmlFile>  -->
+						<!--<suiteXmlFile>SMRegressionSuite.xml</suiteXmlFile> -->
+							 <!--  <suiteXmlFile>ProductionSuite.xml</suiteXmlFile> -->
+							 <suiteXmlFile>local_testng.xml</suiteXmlFile>  
+					</suiteXmlFiles>
+					<reportsDirectory>./test-output</reportsDirectory>
+					<systemPropertyVariables>
+						<env.Name>test</env.Name>
+						<env.siteAdminUserName>testautomation@automation.com</env.siteAdminUserName>
+						<env.siteAdminPassword>India@123</env.siteAdminPassword>
+						<env.uwAdminUserName>supriya.nanditest@nagarro.com</env.uwAdminUserName>
+						<env.uwAdminPassword>Password1</env.uwAdminPassword>
+						<env.bankerUserName>supriya.banker@nagarro.com</env.bankerUserName>
+						<env.bankerPassword>Password2</env.bankerPassword>
+						<env.otherRoleUserName>supriya.nandiOther@nagarro.com</env.otherRoleUserName>
+						<env.otherRolePassword>Password1</env.otherRolePassword>
+						<env.sauceLabUserName>ashishyadav01</env.sauceLabUserName>
+						<env.sauceLabAccessKey>f1fd1811-449e-481d-9f09-03d5025aa1a3</env.sauceLabAccessKey>
+						<buildIdentifier>TestBuildAutomation</buildIdentifier>
+						<dbPath>jdbc:postgresql://54.209.100.12/nrsreporting_uat</dbPath>
+						<dbUserName>postgres</dbUserName>
+						<dbPassword>Omdev1234!</dbPassword>
+						<qtestProjectName>ConnectFN</qtestProjectName> 
+						<!-- <qtestProjectName>Conference Calling</qtestProjectName> -->
+						<seleniumGridEndPoint>http://18.232.148.115:4444/wd/hub</seleniumGridEndPoint>	
+						<enableQtestIntegration>0</enableQtestIntegration>
+						<needsGridInfrastructure>0</needsGridInfrastructure>
+						<maxRetryCount>3</maxRetryCount>
+					</systemPropertyVariables>
+
+					<!--<suiteXmlFile>src/test/resources/GeneralSettings.xml</suiteXmlFile> 
+						<suiteXmlFiles> <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> 
+						<suiteXmlFile>src/test/resources/NewFile.xml</suiteXmlFile> <suiteXmlFile>src/test/resources/barcoColor.xml</suiteXmlFile> 
+						</suiteXmlFiles> -->
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/test/NRS.Test/</directory>
+			</resource>
+		</resources>
+	</build>
+</project>
