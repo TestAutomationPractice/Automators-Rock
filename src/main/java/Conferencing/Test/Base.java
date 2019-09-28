@@ -93,7 +93,6 @@ public class Base {
 		NRSLogin nrsLogin = PageFactory.initElements(driver, NRSLogin.class);
 		nrsLogin.setDependencies(logger, testDataHelper);
 		nrsLogin.loginSM(testDataHelper.getValue("SMURL"), userName, password, testDataDto);
-		NRSHome nrsHome = PageFactory.initElements(driver, NRSHome.class);
 		nrsHome.setDependencies(logger, testDataHelper);
 		nrsHome.clickShowManagement(testDataDto);
 	}
