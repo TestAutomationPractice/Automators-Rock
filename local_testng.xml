@@ -8,22 +8,14 @@
 		<!--<listener class-name="Miscellaneous.Listeners.TestCaseListener" />
 		<listener class-name="Miscellaneous.Listeners.AnnotationTransformer" />-->
 	</listeners>
-	<test name="Conference Call Profiles">
-		<parameter name="platform" value="Local PC" />
-		<parameter name="browser" value="Chrome" />
-		<parameter name="version" value="61.0" />
-		<parameter name="screenResolution" value="1280x960" />
-		<classes>
-		     <class name="Maintenance.test.VerifyConferenceCallProfile" /> 
-		</classes>
-	</test> 
+	
 	<test name="Automated Phone Directory">
 		<parameter name="platform" value="Local PC" />
 		<parameter name="browser" value="Chrome" />
 		<parameter name="version" value="61.0" />
 		<parameter name="screenResolution" value="1280x960" />
 		<classes>
-		     <class name="Maintenance.test.VerifyAutomatedPhoneDirectory" /> 
+		     <class name="SM.test.AddingNewMovie" /> 
 		</classes>
 	</test>
 </suite> 
