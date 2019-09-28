@@ -11,6 +11,7 @@ import DTO.CommonTestDataDto;
 import Miscellaneous.*;
 import Miscellaneous.Enums.TestRunType;
 import Miscellaneous.Enums.UserRole;
+import Pages.MoviePage;
 
 public class AddingNewMovie extends Base {
 	
@@ -30,7 +31,15 @@ public class AddingNewMovie extends Base {
 		TestDataHelper testDataHelper = testDataDto.getTestDataHelper();
 		//Login and Create a new Conference Call on NRS
 		
-		login(userName, password, testDataDto);
+		
+		MoviePage moviesPage = PageFactory.initElements(driver, MoviePage.class);
+		moviesPage.setDependencies(logger, testDataHelper);
+		moviesPage.clickExpand();
+		moviesPage.clickLogin();
+		moviesPage.enterUsername(userName);
+		moviesPage.enterPassword(password);
+		moviesPage.clickLoginButton();
+		
 		
 	}
 
