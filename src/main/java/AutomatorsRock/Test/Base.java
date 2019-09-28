@@ -96,6 +96,7 @@ public class Base {
 		WebDriver driver = testDataDto.getDriver();
 		ComponentBase common = PageFactory.initElements(driver, ComponentBase.class);
 		common.setDependencies(logger, testDataHelper);
+		common.clickCollapse();
 		common.clickLogin();
 		common.enterUsername(userName);
 		common.enterUsername(password);
