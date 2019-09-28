@@ -3,7 +3,7 @@ package SM.test;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-import Conferencing.Test.Base;
+import AutomatorsRock.Test.Base;
 import DTO.CommonTestDataDto;
 import Miscellaneous.Configuration;
 import Miscellaneous.Log4JLogger;
