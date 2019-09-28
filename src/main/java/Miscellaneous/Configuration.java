@@ -11,14 +11,10 @@ import org.apache.log4j.LogManager;
 public final class Configuration {
 
 	private final String _environmentName;
-	private final String _siteAdminUserName;
-	private final String _siteAdminPassword;
-	private final String _uwAdminUserName;
-	private final String _uwAdminPassword;
-	private final String _bankerUserName;
-	private final String _bankerPassword;
-	private final String _otherRoleUserName;
-	private final String _otherRolePassword;
+	private final String _AdminUserName;
+	private final String _AdminPassword;
+	private final String _UserName;
+	private final String _Password;
 	private final String _sauceLabUserName;
 	private final String _sauceLabAccessKey;
 	private final String _buildIdentifier;
@@ -39,14 +35,10 @@ public final class Configuration {
 
 	private Configuration() {
 		_environmentName = System.getProperty("env.Name");
-		_siteAdminUserName = System.getProperty("env.siteAdminUserName");
-		_siteAdminPassword = System.getProperty("env.siteAdminPassword");
-		_uwAdminUserName = System.getProperty("env.uwAdminUserName");
-		_uwAdminPassword = System.getProperty("env.uwAdminPassword");
-		_bankerUserName = System.getProperty("env.bankerUserName");
-		_bankerPassword = System.getProperty("env.bankerPassword");
-		_otherRoleUserName = System.getProperty("env.otherRoleUserName");
-		_otherRolePassword = System.getProperty("env.otherRolePassword");
+		_AdminUserName = System.getProperty("envAdminUserName");
+		_AdminPassword = System.getProperty("env.AdminPassword");
+		_UserName = System.getProperty("env.uwAdminUserName");
+		_Password = System.getProperty("env.uwAdminPassword");
 		_sauceLabUserName = System.getProperty("env.sauceLabUserName");
 		_sauceLabAccessKey = System.getProperty("env.sauceLabAccessKey");
 		String buildIdentifier = System.getProperty("buildIdentifier");
@@ -102,57 +94,34 @@ public final class Configuration {
 	 * @return the siteAdminUserName
 	 */
 	public String getSiteAdminUserName() {
-		return _siteAdminUserName;
+		return _AdminUserName;
 	}
 
 	/**
 	 * @return the siteAdminPassword
 	 */
 	public String getSiteAdminPassword() {
-		return _siteAdminPassword;
+		return _AdminPassword;
 	}
 
 	/**
 	 * @return the uwAdminUserName
 	 */
 	public String getUwAdminUserName() {
-		return _uwAdminUserName;
+		return _UserName;
 	}
 
 	/**
 	 * @return the uwAdminPassword
 	 */
 	public String getUwAdminPassword() {
-		return _uwAdminPassword;
+		return _Password;
 	}
 
 	/**
 	 * @return the bankerUserName
 	 */
-	public String getBankerUserName() {
-		return _bankerUserName;
-	}
-
-	/**
-	 * @return the bankerPassword
-	 */
-	public String getBankerPassword() {
-		return _bankerPassword;
-	}
-
-	/**
-	 * @return the otherRoleUserName
-	 */
-	public String getOtherRoleUserName() {
-		return _otherRoleUserName;
-	}
-
-	/**
-	 * @return the otherRolePassword
-	 */
-	public String getOtherRolePassword() {
-		return _otherRolePassword;
-	}
+	
 
 	/**
 	 * @return the sauceLabUserName
