@@ -15,7 +15,7 @@
 		<parameter name="version" value="61.0" />
 		<parameter name="screenResolution" value="1280x960" />
 		<classes>
-		     <class name="SM.test.AddingNewMovie" /> 
+		     <class name="Autothon.test.VerifyNewMovieAdded" /> 
 		</classes>
 	</test>
 </suite> 
