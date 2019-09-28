@@ -1,4 +1,4 @@
-package Conferencing.Test;
+package AutomatorsRock.Test;
 import java.lang.reflect.Method;
 
 import org.apache.commons.lang3.RandomStringUtils;
@@ -90,7 +90,17 @@ public class Base {
 		  logger.log("Method Called: Open URL");
 	}
 	
-	
+	protected void login(String username, String password,CommonTestDataDto testDataDto){
+		TestDataHelper testDataHelper = testDataDto.getTestDataHelper();
+		Log4JLogger logger = testDataDto.getLogger();
+		WebDriver driver = testDataDto.getDriver();
+		ComponentBase common = PageFactory.initElements(driver, ComponentBase.class);
+		common.setDependencies(logger, testDataHelper);
+		common.clickLogin();
+		common.enterUsername(userName);
+		common.enterUsername(password);
+		common.clickLoginButton();
+	}
 	
 	public String generateNumInStringFormat(int length) {
 		// *** Function to create random string

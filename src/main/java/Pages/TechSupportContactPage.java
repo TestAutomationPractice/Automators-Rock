@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Assert;
 
-import Conferencing.Test.ComponentBase;
+import AutomatorsRock.Test.ComponentBase;
 import Miscellaneous.TestDataHelper;
 import Miscellaneous.*;
 
