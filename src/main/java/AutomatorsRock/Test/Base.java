@@ -90,7 +90,7 @@ public class Base {
 		  logger.log("Method Called: Open URL");
 	}
 	
-	public String generateNumInStringFormat(int length) {
+	public static String generateNumInStringFormat(int length) {
 		// *** Function to create random string
 		String allowedChars = "0123456789";
 		String text = "";
@@ -98,6 +98,8 @@ public class Base {
 		text = temp.substring(0, temp.length());
 		return text;
 	}
+	
+	
 	
 	protected String getTestCaseNumber(Method method) {
 		String testCaseNumber = null;

@@ -60,12 +60,12 @@ public abstract class ComponentBase {
 	protected WebElement link_cancel;
 	
 	@FindBy(how = How.XPATH, using = "//input[@name='password']")
-	protected WebElement input_username;
-	
-	@FindBy(how = How.XPATH, using = "//input[@name='username']")
 	protected WebElement input_password;
 	
-	@FindBy(how = How.XPATH, using = "//div[@class='collapse']//button']")
+	@FindBy(how = How.XPATH, using = "//input[@name='username']")
+	protected WebElement input_username;
+	
+	@FindBy(how = How.XPATH, using = "//button[text()='#']")
 	protected WebElement button_collapse;
 	
 	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-success']")
@@ -121,6 +121,7 @@ public abstract class ComponentBase {
 	
 	public void enterUsername(String name){
 		log("Method Called: enterUsername");
+System.out.println("user name is " + name);
 		input_username.clear();
 		input_username.sendKeys(name);
 	}

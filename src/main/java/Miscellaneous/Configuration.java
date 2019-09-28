@@ -35,7 +35,7 @@ public final class Configuration {
 
 	private Configuration() {
 		_environmentName = System.getProperty("env.Name");
-		_AdminUserName = System.getProperty("envAdminUserName");
+		_AdminUserName = System.getProperty("env.AdminUserName");
 		_AdminPassword = System.getProperty("env.AdminPassword");
 		_UserName = System.getProperty("env.uwAdminUserName");
 		_Password = System.getProperty("env.uwAdminPassword");

@@ -3,10 +3,9 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
-import AutomatorsRock.*;
 import AutomatorsRock.Test.ComponentBase;
 import Miscellaneous.Log4JLogger;
 import Miscellaneous.TestDataHelper;
@@ -47,8 +46,12 @@ public class AddMoviePage extends ComponentBase{
 		movie_title.sendKeys(movieTitle);
 	}
 	
-	public void enterMovieDescription(String moviedescription){
+	public void enterMovieDescription(String moviedescription) throws InterruptedException{
 		log("Method called: enterMovieDescription");
+		Thread.sleep(6000);
+		Actions act = new Actions(driver);
+		act.moveToElement(movie_description).build().perform();
+		movie_description.clear();
 		movie_description.sendKeys(moviedescription);
 	}
 	
@@ -59,7 +62,8 @@ public class AddMoviePage extends ComponentBase{
 	
 	public void enterMovieCategories(String moviecategories){
 		log("Method called: enterMovieCategories");
-		movie_categories.sendKeys(moviecategories);
+		movie_categories = driver.findElement(By.xpath("//option[contains(text(),'"+moviecategories +"']"));
+		movie_categories.click();
 	}
 	
 	public void enterMovieURL(String movieurl){
@@ -67,11 +71,11 @@ public class AddMoviePage extends ComponentBase{
 		movie_url.sendKeys(movieurl);
 	}
 	
-	public void enterMovieRatings(int rating){
+	/*public void enterMovieRatings(int rating){
 		log("Method called: enterMovieRatings");
 
 		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Rating')]/"));
-	}
+	}*/
 	
 	public void clickSaveMovie(){
 		log("Method called: clickSaveMovie");
