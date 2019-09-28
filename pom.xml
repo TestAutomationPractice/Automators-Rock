@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>ConferencingAutomation</name>
+  <name>AutothonAutomatorsRock</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -103,48 +103,30 @@
 				<configuration>
 					<jvm>${env.JAVA_HOME}/bin/java</jvm>
 					<suiteXmlFiles>
-						<!-- <suiteXmlFile>SmokeSuite.xml</suiteXmlFile> -->
-						<!-- <suiteXmlFile>ConferencingRegressionSuite.xml</suiteXmlFile>  -->
-						<!--<suiteXmlFile>SMRegressionSuite.xml</suiteXmlFile> -->
-							 <!--  <suiteXmlFile>ProductionSuite.xml</suiteXmlFile> -->
-							 <suiteXmlFile>local_testng.xml</suiteXmlFile>  
+						 <suiteXmlFile>local_testng.xml</suiteXmlFile>  
 					</suiteXmlFiles>
 					<reportsDirectory>./test-output</reportsDirectory>
 					<systemPropertyVariables>
 						<env.Name>test</env.Name>
-						<env.siteAdminUserName>testautomation@automation.com</env.siteAdminUserName>
-						<env.siteAdminPassword>India@123</env.siteAdminPassword>
-						<env.uwAdminUserName>supriya.nanditest@nagarro.com</env.uwAdminUserName>
-						<env.uwAdminPassword>Password1</env.uwAdminPassword>
-						<env.bankerUserName>supriya.banker@nagarro.com</env.bankerUserName>
-						<env.bankerPassword>Password2</env.bankerPassword>
-						<env.otherRoleUserName>supriya.nandiOther@nagarro.com</env.otherRoleUserName>
-						<env.otherRolePassword>Password1</env.otherRolePassword>
-						<env.sauceLabUserName>ashishyadav01</env.sauceLabUserName>
-						<env.sauceLabAccessKey>f1fd1811-449e-481d-9f09-03d5025aa1a3</env.sauceLabAccessKey>
+						<env.AdminUserName>testautomation@automation.com</env.AdminUserName>
+						<env.AdminPassword>India@123</env.AdminPassword>
+						<env.UserName>supriya.nanditest@nagarro.com</env.UserName>
+						<env.Password>Password1</env.Password>
+						<env.sauceLabUserName>xxxxxx</env.sauceLabUserName>
+						<env.sauceLabAccessKey>xxxx-xxxx-xxxx-xxxxx-xxxxx</env.sauceLabAccessKey>
 						<buildIdentifier>TestBuildAutomation</buildIdentifier>
-						<dbPath>jdbc:postgresql://54.209.100.12/nrsreporting_uat</dbPath>
+						<dbPath>jdbc:postgresql://00.00.002/xxxxxx_uat</dbPath>
 						<dbUserName>postgres</dbUserName>
-						<dbPassword>Omdev1234!</dbPassword>
-						<qtestProjectName>ConnectFN</qtestProjectName> 
-						<!-- <qtestProjectName>Conference Calling</qtestProjectName> -->
-						<seleniumGridEndPoint>http://18.232.148.115:4444/wd/hub</seleniumGridEndPoint>	
+						<dbPassword>pass0000</dbPassword>
+						<qtestProjectName>Autothon</qtestProjectName> 
+						<seleniumGridEndPoint>http://9999.999:8080/wd/hub</seleniumGridEndPoint>	
 						<enableQtestIntegration>0</enableQtestIntegration>
 						<needsGridInfrastructure>0</needsGridInfrastructure>
 						<maxRetryCount>3</maxRetryCount>
 					</systemPropertyVariables>
-
-					<!--<suiteXmlFile>src/test/resources/GeneralSettings.xml</suiteXmlFile> 
-						<suiteXmlFiles> <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> 
-						<suiteXmlFile>src/test/resources/NewFile.xml</suiteXmlFile> <suiteXmlFile>src/test/resources/barcoColor.xml</suiteXmlFile> 
-						</suiteXmlFiles> -->
 				</configuration>
 			</plugin>
 		</plugins>
-		<resources>
-			<resource>
-				<directory>src/test/NRS.Test/</directory>
-			</resource>
-		</resources>
+	
 	</build>
 </project>
