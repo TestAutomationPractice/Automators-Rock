@@ -65,6 +65,9 @@ public abstract class ComponentBase {
 	@FindBy(how = How.XPATH, using = "//input[@name='username']")
 	protected WebElement input_password;
 	
+	@FindBy(how = How.XPATH, using = "//div[@class='collapse']//button']")
+	protected WebElement button_collapse;
+	
 	@FindBy(how = How.XPATH, using = "//button[@class='btn btn-success']")
 	protected WebElement button_login;
 	
@@ -98,12 +101,12 @@ public abstract class ComponentBase {
 
 	public void clickProfile(){
 		log("Method Called: clickProfile");
-		link_movies.click();
+		link_profile.click();
 	}
 	
 	public void clickMovies(){
 		log("Method Called: clickMovies");
-		link_profile.click();
+		link_movies.click();
 	}
 	
 	public void clickLogin(){
@@ -133,5 +136,8 @@ public abstract class ComponentBase {
 		button_login.click();
 	}
 	
-	
+	public void clickCollapse(){
+		log("Method Called: clickCollapse");
+		button_collapse.click();
+	}
 }
