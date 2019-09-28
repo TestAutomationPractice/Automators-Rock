@@ -6,12 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.Assert;
 
 import Conferencing.Test.ComponentBase;
 import Miscellaneous.Log4JLogger;
 import Miscellaneous.TestDataHelper;
 
-public class UserMoviesPage extends ComponentBase {
+public class UserProfilePage extends ComponentBase {
 
 	@FindBy(how = How.XPATH, using = "//div[@class='mycard']")
 	WebElement movieCards;
@@ -27,7 +28,7 @@ public class UserMoviesPage extends ComponentBase {
 	String txtYourProfile = "Your Profile: ";
 	int countOfMovieCards;
 
-	public UserMoviesPage(WebDriver driver) {
+	public UserProfilePage(WebDriver driver) {
 		super(driver);
 	}
 
@@ -41,34 +42,11 @@ public class UserMoviesPage extends ComponentBase {
 		yourProfileHeader.getText();
 		
 	}
-	// Verifies if the user has successfully logged in to the application by
-	// verifying the presence of Search Box on the landing screen
-	public boolean verifyUserHasLoggedInSuccessfully() {
-		log("Method called: verifyUserHasLoggedInSuccessfully");
-		if (driver.findElement(By.xpath(xpathSearchBox)).isDisplayed())
-			return true;
-		else
-			return false;
-	}
-
-	// Verifies if the user has successfully navigated to the Profile Page
-	public boolean verifyUserIsNavigatedtoProfilePage() {
-		log("Method called: verifyUserIsNavigatedtoProfilePage");
-		if (driver.getCurrentUrl().equals("http://autothon-nagarro-frontend-x04.azurewebsites.net/profile"))
-			if (driver.findElement(By.tagName("h2")).getText().equals(txtYourProfile))
-				return true;
-			else
-				return false;
-		return false;
-	}
-
-	// Verifies the UI of User Profile Page
-	public boolean verifyUIofUserProfilePage() {
-
-		// Verify the title of User Profile Page
-
-		return false;
-
+	
+	public void verifySearchBox()
+	{
+		log("Method called: verifySearchBox");
+		Assert.assertTrue(searchBox.isDisplayed());
 	}
 
 }
