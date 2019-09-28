@@ -16,9 +16,6 @@ import Miscellaneous.*;
 import Miscellaneous.Enums.ResultStatus;
 import Miscellaneous.Enums.TestRunType;
 import Miscellaneous.Enums.UserRole;
-import Pages.ShowManagement.NRSHome;
-import Pages.ShowManagement.NRSLogin;
-
 
 public class Base {
 
@@ -85,34 +82,12 @@ public class Base {
 		}
 	}
 
-	protected void navigateToShowManagement(CommonTestDataDto testDataDto, String userName, String password)
-			throws Exception {
-		WebDriver driver = testDataDto.getDriver();
-		Log4JLogger logger = testDataDto.getLogger();
-		TestDataHelper testDataHelper = testDataDto.getTestDataHelper();
-		NRSLogin nrsLogin = PageFactory.initElements(driver, NRSLogin.class);
-		nrsLogin.setDependencies(logger, testDataHelper);
-		nrsLogin.loginSM(testDataHelper.getValue("SMURL"), userName, password, testDataDto);
-		nrsHome.setDependencies(logger, testDataHelper);
-		nrsHome.clickShowManagement(testDataDto);
-	}
-	
-	protected void gotoCallsURL(CommonTestDataDto testDataDto)
-			throws Exception {
-		WebDriver driver = testDataDto.getDriver();
-		Log4JLogger logger = testDataDto.getLogger();
-		TestDataHelper testDataHelper = testDataDto.getTestDataHelper();
-		logger.log("Method Called: gotoCallsURL");
-		driver.get(testDataHelper.getValue("CallsURL"));
-	}
-	
-	
 	protected void navigateToURL(CommonTestDataDto testDataDto, String url)
 			throws Exception {
 		  WebDriver driver = testDataDto.getDriver();
 		  Log4JLogger logger = testDataDto.getLogger();
 		  driver.get(url);
-		  logger.log("Method Called: Open Registration URL");
+		  logger.log("Method Called: Open URL");
 	}
 	
 	
