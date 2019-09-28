@@ -26,4 +26,13 @@
 			<class name="Autothon.test.VerifyNewMovieAdded" />
 		</classes>
 	</test>
+	
+	
+	<!-- <test name="API Testing">
+
+		<classes>
+			<class name="Autothon.test.APITesting" />
+		</classes>
+	</test> -->
+	
 </suite> 
