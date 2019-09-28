@@ -1,13 +1,17 @@
 package AutomatorsRock.Test;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Miscellaneous.Log4JLogger;
 import Miscellaneous.Enums.*;
+import junit.framework.Assert;
 import Miscellaneous.*;
 
 /**
@@ -35,8 +39,14 @@ public abstract class ComponentBase {
 	@FindBy(how = How.LINK_TEXT, using = "Logout")
 	protected WebElement link_logout;
 	
+	@FindAll(@FindBy(how = How.LINK_TEXT, using = "Logout"))
+	List<WebElement> link_logoutList;
+	
 	@FindBy(how = How.LINK_TEXT, using = "add movie")
 	protected WebElement link_addMovie;
+	
+	@FindAll(@FindBy(how = How.LINK_TEXT, using = "add movie"))
+	List<WebElement> link_addMovieList;
 	
 	@FindBy(how = How.LINK_TEXT, using = "Cancel")
 	protected WebElement link_cancel;
@@ -129,6 +139,24 @@ public abstract class ComponentBase {
 		log("Method Called: clickExpand");
 		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(button_collapse));
 		button_collapse.click();
+	}
+	
+	public void isAddMoviePresent(boolean expected){
+		log("Method Called: isAddMoviePresent");
+	 boolean actual = false; 
+		if(link_addMovieList.size()>0){
+			actual = true; 
+		}
+		Assert.assertEquals(actual, expected);	
+	}
+	
+	public void isLogoutPresent(boolean expected){
+		log("Method Called: isLogoutPresent");
+	 boolean actual = false; 
+		if(link_logoutList.size()>0){
+			actual = true; 
+		}
+		Assert.assertEquals(actual, expected);	
 	}
 	
 	public void clickAddMovie(){
