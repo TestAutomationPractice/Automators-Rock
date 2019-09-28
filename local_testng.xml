@@ -13,14 +13,14 @@
 	<parameter name="version" value="61.0" />
 	<parameter name="screenResolution" value="1280x960" />
 
-	<test name="Automated Phone Directory">
+	<test name="Add Movie Admin User">
 
 		<classes>
 			<class name="Autothon.test.AddingNewMovie" />
 		</classes>
 	</test>
 
-	<test name="Automated Phone Directory">
+	<test name="Parallel Run of Add and Verify Movie">
 
 		<classes>
 			<class name="Autothon.test.VerifyNewMovieAdded" />
