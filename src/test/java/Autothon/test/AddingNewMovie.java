@@ -1,4 +1,4 @@
-package SM.test;
+package Autothon.test;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -17,7 +17,7 @@ public class AddingNewMovie extends Base {
 	private static String movieTitle = "Movie" + generateNumInStringFormat(4);
 	private static String movieDirector = "Director" + generateNumInStringFormat(4);
 	private static String movieDescription = "movieDescription" + generateNumInStringFormat(10);
-	private static String movieURL = "http://autothon-nagarro-frontend-b04.azurewebsites.net/addMovie";
+	private static String movieURL = "http://autothon.net/addMovie";
 	private static String type= "Comedy";
 	
 	public AddingNewMovie() {
@@ -27,8 +27,8 @@ public class AddingNewMovie extends Base {
 		userRole = UserRole.SiteAdmin;
 	}
 
-	@Test(description = "Create an Video only Show", enabled = true)
-	@CustomTestAnnotations(testCaseNumber = "TC-119")
+	@Test(description = "Adding New Moview Through UI", enabled = true)
+	@CustomTestAnnotations(testCaseNumber = "TC-001")
 	public void createshow() throws Throwable, Exception {
 		CommonTestDataDto testDataDto = commonTestData.get();
 		RemoteWebDriver driver = testDataDto.getDriver();
@@ -58,10 +58,7 @@ public class AddingNewMovie extends Base {
 		addMoviePage.enterMovieURL(movieURL);
 		Thread.sleep(5000);
 		addMoviePage.clickSaveMovie();
-    
-		
-		
-	}
+   	}
 
 	
 }

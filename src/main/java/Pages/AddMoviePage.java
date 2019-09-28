@@ -1,7 +1,6 @@
 package Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -54,8 +53,6 @@ public class AddMoviePage extends ComponentBase{
 	public void enterMovieDescription(String moviedescription){
 		log("Method called: enterMovieDescription");
 		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.visibilityOf(movie_description));
-		/*JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("arguments[0].value='"+ moviedescription +"';", movie_description);*/
 		movie_description.sendKeys(moviedescription);
 	}
 	
@@ -70,10 +67,12 @@ public class AddMoviePage extends ComponentBase{
 		movie_categories.click();
 	}
 	
-	public void enterMovieURL(String movieurl){
+	public void enterMovieURL(String movieurl) throws InterruptedException{
 		log("Method called: enterMovieURL");
 		movie_url.clear();
 		movie_url.sendKeys(movieurl);
+		Thread.sleep(1000);
+		movie_director.click();
 	}
 	
 	public void enterMovieRatings(int rating){
