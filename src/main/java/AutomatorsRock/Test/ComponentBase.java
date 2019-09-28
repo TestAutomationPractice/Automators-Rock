@@ -140,4 +140,9 @@ public abstract class ComponentBase {
 		log("Method Called: clickCollapse");
 		button_collapse.click();
 	}
+	
+	public void clickAddMovie(){
+		log("Method Called: clickAddMovie");
+		link_addMovie.click();
+	}
 }
