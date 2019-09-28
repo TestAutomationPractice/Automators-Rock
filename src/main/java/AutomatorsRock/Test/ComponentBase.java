@@ -136,8 +136,8 @@ public abstract class ComponentBase {
 		button_login.click();
 	}
 	
-	public void clickCollapse(){
-		log("Method Called: clickCollapse");
+	public void clickExpand(){
+		log("Method Called: clickExpand");
 		button_collapse.click();
 	}
 	

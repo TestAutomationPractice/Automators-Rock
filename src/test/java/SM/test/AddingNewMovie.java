@@ -10,6 +10,7 @@ import DTO.CommonTestDataDto;
 import Miscellaneous.*;
 import Miscellaneous.Enums.TestRunType;
 import Miscellaneous.Enums.UserRole;
+import Pages.MoviePage;
 
 public class AddingNewMovie extends Base {
 	
@@ -29,10 +30,12 @@ public class AddingNewMovie extends Base {
 		TestDataHelper testDataHelper = testDataDto.getTestDataHelper();
 		//Login and Create a new Conference Call on NRS
 		
+
 		navigateToURL(testDataDto, testDataHelper.getValue("URL"));
 		Thread.sleep(5000);
 		login(userName, password, testDataDto);
 		Thread.sleep(5000);
+    
 		
 		
 	}
