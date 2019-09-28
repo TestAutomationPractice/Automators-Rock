@@ -110,8 +110,6 @@
 						<env.Name>test</env.Name>
 						<env.AdminUserName>admin</env.AdminUserName>
 						<env.AdminPassword>password</env.AdminPassword>
-						<env.UserName>user</env.UserName>
-						<env.Password>password</env.Password>
 						<env.sauceLabUserName>xxxxxx</env.sauceLabUserName>
 						<env.sauceLabAccessKey>xxxx-xxxx-xxxx-xxxxx-xxxxx</env.sauceLabAccessKey>
 						<buildIdentifier>TestBuildAutomation</buildIdentifier>

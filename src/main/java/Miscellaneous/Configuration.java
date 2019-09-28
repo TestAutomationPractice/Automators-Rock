@@ -13,8 +13,6 @@ public final class Configuration {
 	private final String _environmentName;
 	private final String _AdminUserName;
 	private final String _AdminPassword;
-	private final String _UserName;
-	private final String _Password;
 	private final String _sauceLabUserName;
 	private final String _sauceLabAccessKey;
 	private final String _buildIdentifier;
@@ -37,8 +35,6 @@ public final class Configuration {
 		_environmentName = System.getProperty("env.Name");
 		_AdminUserName = System.getProperty("env.AdminUserName");
 		_AdminPassword = System.getProperty("env.AdminPassword");
-		_UserName = System.getProperty("env.uwAdminUserName");
-		_Password = System.getProperty("env.uwAdminPassword");
 		_sauceLabUserName = System.getProperty("env.sauceLabUserName");
 		_sauceLabAccessKey = System.getProperty("env.sauceLabAccessKey");
 		String buildIdentifier = System.getProperty("buildIdentifier");
@@ -104,20 +100,7 @@ public final class Configuration {
 		return _AdminPassword;
 	}
 
-	/**
-	 * @return the uwAdminUserName
-	 */
-	public String getUwAdminUserName() {
-		return _UserName;
-	}
-
-	/**
-	 * @return the uwAdminPassword
-	 */
-	public String getUwAdminPassword() {
-		return _Password;
-	}
-
+	
 	/**
 	 * @return the bankerUserName
 	 */

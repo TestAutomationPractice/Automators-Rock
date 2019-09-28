@@ -1,4 +1,4 @@
-package SM.test;
+package Autothon.test;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
