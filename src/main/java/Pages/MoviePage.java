@@ -33,9 +33,5 @@ public class MoviePage extends ComponentBase{
 			return true; 
 		
 		return false;
-		
 	}
-	
-	
-	
 }
