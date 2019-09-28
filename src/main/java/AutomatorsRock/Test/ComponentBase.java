@@ -1,29 +1,11 @@
 package AutomatorsRock.Test;
 
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import Miscellaneous.Log4JLogger;
 import Miscellaneous.Enums.*;
 import Miscellaneous.*;
@@ -101,49 +83,57 @@ public abstract class ComponentBase {
 
 	public void clickProfile(){
 		log("Method Called: clickProfile");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(link_profile));
 		link_profile.click();
 	}
 	
 	public void clickMovies(){
 		log("Method Called: clickMovies");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(link_movies));
 		link_movies.click();
 	}
 	
 	public void clickLogin(){
 		log("Method Called: clickLogin");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(link_login));
 		link_login.click();
 	}
 	
 	public void clickCancel(){
 		log("Method Called: clickCancel");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(link_cancel));
 		link_cancel.click();
 	}
 	
 	public void enterUsername(String name){
 		log("Method Called: enterUsername");
-System.out.println("user name is " + name);
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.visibilityOf(input_username));
 		input_username.clear();
 		input_username.sendKeys(name);
 	}
 	
 	public void enterPassword(String password){
 		log("Method Called: enterPassword");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.visibilityOf(input_password));
 		input_password.clear();
 		input_password.sendKeys(password);
 	}
 	
 	public void clickLoginButton(){
 		log("Method Called: clickLoginButton");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(button_login));
 		button_login.click();
 	}
 	
 	public void clickExpand(){
 		log("Method Called: clickExpand");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(button_collapse));
 		button_collapse.click();
 	}
 	
 	public void clickAddMovie(){
 		log("Method Called: clickAddMovie");
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.elementToBeClickable(link_addMovie));
 		link_addMovie.click();
 	}
 }

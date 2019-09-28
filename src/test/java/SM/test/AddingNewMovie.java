@@ -16,7 +16,7 @@ import Pages.MoviePage;
 public class AddingNewMovie extends Base {
 	private static String movieTitle = "Movie" + generateNumInStringFormat(4);
 	private static String movieDirector = "Director" + generateNumInStringFormat(4);
-	private static String movieDescription = "movieDescription" + generateNumInStringFormat(4);
+	private static String movieDescription = "movieDescription" + generateNumInStringFormat(10);
 	private static String movieURL = "http://autothon-nagarro-frontend-b04.azurewebsites.net/addMovie";
 	private static String type= "Comedy";
 	
@@ -38,19 +38,13 @@ public class AddingNewMovie extends Base {
 		
 
 		navigateToURL(testDataDto, testDataHelper.getValue("URL"));
-		Thread.sleep(5000);
 		MoviePage moviesPage = PageFactory.initElements(driver, MoviePage.class);
 		moviesPage.setDependencies(logger, testDataHelper);
 		moviesPage.clickExpand();
-		Thread.sleep(2000);
 		moviesPage.clickLogin();
-		Thread.sleep(2000);
 		moviesPage.enterUsername(userName);
-		Thread.sleep(2000);
 		moviesPage.enterPassword(password);
-		Thread.sleep(2000);
 		moviesPage.clickLoginButton();
-		Thread.sleep(5000);
 		moviesPage.clickAddMovie();
 		
 		AddMoviePage addMoviePage = PageFactory.initElements(driver, AddMoviePage.class);
@@ -60,7 +54,9 @@ public class AddingNewMovie extends Base {
 		addMoviePage.enterMovieDirector(movieDirector);
 		addMoviePage.enterMovieDescription(movieDescription);
 		addMoviePage.enterMovieCategories(type);
+		addMoviePage.enterMovieRatings(1);
 		addMoviePage.enterMovieURL(movieURL);
+		Thread.sleep(5000);
 		addMoviePage.clickSaveMovie();
     
 		

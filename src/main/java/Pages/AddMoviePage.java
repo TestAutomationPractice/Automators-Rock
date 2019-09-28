@@ -1,14 +1,19 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import AutomatorsRock.Test.ComponentBase;
 import Miscellaneous.Log4JLogger;
 import Miscellaneous.TestDataHelper;
+import Miscellaneous.Enums.WaitInterval;
 
 public class AddMoviePage extends ComponentBase{
 
@@ -18,7 +23,7 @@ public class AddMoviePage extends ComponentBase{
 	@FindBy(how = How.NAME, using = "director")
 	WebElement movie_director;
 	
-	@FindBy(how = How.NAME, using = "description")
+	@FindBy(how = How.XPATH, using = "//textarea[@placeholder='Please enter a short description of the movie']")
 	WebElement movie_description;
 	
 	@FindBy(how = How.NAME, using = "categories")
@@ -46,12 +51,11 @@ public class AddMoviePage extends ComponentBase{
 		movie_title.sendKeys(movieTitle);
 	}
 	
-	public void enterMovieDescription(String moviedescription) throws InterruptedException{
+	public void enterMovieDescription(String moviedescription){
 		log("Method called: enterMovieDescription");
-		Thread.sleep(6000);
-		Actions act = new Actions(driver);
-		act.moveToElement(movie_description).build().perform();
-		movie_description.clear();
+		new WebDriverWait(driver, WaitInterval.OneMinute.getSeconds()).until(ExpectedConditions.visibilityOf(movie_description));
+		/*JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].value='"+ moviedescription +"';", movie_description);*/
 		movie_description.sendKeys(moviedescription);
 	}
 	
@@ -62,23 +66,27 @@ public class AddMoviePage extends ComponentBase{
 	
 	public void enterMovieCategories(String moviecategories){
 		log("Method called: enterMovieCategories");
-		movie_categories = driver.findElement(By.xpath("//option[contains(text(),'"+moviecategories +"']"));
+		movie_categories = driver.findElement(By.xpath("//option[contains(text(),'"+moviecategories +"')]"));
 		movie_categories.click();
 	}
 	
 	public void enterMovieURL(String movieurl){
 		log("Method called: enterMovieURL");
+		movie_url.clear();
 		movie_url.sendKeys(movieurl);
 	}
 	
-	/*public void enterMovieRatings(int rating){
+	public void enterMovieRatings(int rating){
 		log("Method called: enterMovieRatings");
 
-		WebElement element = driver.findElement(By.xpath("//label[contains(text(),'Rating')]/"));
-	}*/
+		WebElement element = driver.findElement(By.xpath("(//*[@fill='black'])[1]"));
+		Actions act = new Actions(driver);
+		act.moveToElement(element).build().perform();
+	}
 	
-	public void clickSaveMovie(){
+	public void clickSaveMovie() throws InterruptedException{
 		log("Method called: clickSaveMovie");
+		Thread.sleep(2000);
 		btn_saveMovie.click();
 	}
 	
