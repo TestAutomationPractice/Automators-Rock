@@ -1,4 +1,4 @@
-package Conferencing.Test;
+package AutomatorsRock.Test;
 
 
 import java.io.BufferedReader;

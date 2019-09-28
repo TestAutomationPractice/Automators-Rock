@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import Conferencing.Test.ComponentBase;
+import AutomatorsRock.*;
+import AutomatorsRock.Test.ComponentBase;
 import Miscellaneous.Log4JLogger;
 import Miscellaneous.TestDataHelper;
 

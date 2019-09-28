@@ -108,10 +108,10 @@
 					<reportsDirectory>./test-output</reportsDirectory>
 					<systemPropertyVariables>
 						<env.Name>test</env.Name>
-						<env.AdminUserName>testautomation@automation.com</env.AdminUserName>
-						<env.AdminPassword>India@123</env.AdminPassword>
-						<env.UserName>supriya.nanditest@nagarro.com</env.UserName>
-						<env.Password>Password1</env.Password>
+						<env.AdminUserName>admin</env.AdminUserName>
+						<env.AdminPassword>password</env.AdminPassword>
+						<env.UserName>user</env.UserName>
+						<env.Password>password</env.Password>
 						<env.sauceLabUserName>xxxxxx</env.sauceLabUserName>
 						<env.sauceLabAccessKey>xxxx-xxxx-xxxx-xxxxx-xxxxx</env.sauceLabAccessKey>
 						<buildIdentifier>TestBuildAutomation</buildIdentifier>
